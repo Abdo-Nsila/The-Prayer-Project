@@ -1,0 +1,12 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body, #root {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(30, 28, 28);
+  color: whitesmoke;
+}
+
