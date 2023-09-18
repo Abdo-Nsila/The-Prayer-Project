@@ -5,8 +5,6 @@ import ReactLoading from "react-loading";
 
 import "./TableData.css";
 
-// import RowTable from './RowTable'
-
 export default function TableData({ country, city }) {
   const [timings, setTimings] = useState([]);
 
@@ -26,16 +24,23 @@ export default function TableData({ country, city }) {
 
   const showLabel = Object.keys(timings);
   const showTimes = Object.values(timings);
+  const showData = showLabel.map((label, i) => {
+    return (
+      <Table.Row key={i}>
+        <Table.RowHeaderCell>{label}</Table.RowHeaderCell>
+        <Table.Cell>{showTimes[i]}</Table.Cell>
+      </Table.Row>
+    );
+  });
 
 
 
-  
   if (!timings || Object.keys(timings).length === 0) {
     return (
       <div className="box">
-        <ReactLoading type="spinningBubbles" color="#fff" />;
+        <ReactLoading type="spinningBubbles" color="#fff" />
       </div>
-    );
+    )
   }
 
   return (
@@ -49,52 +54,7 @@ export default function TableData({ country, city }) {
           </Table.Row>
         </Table.Header>
 
-        <Table.Body>
-          <Table.Row>
-            <Table.RowHeaderCell>{showLabel[0]}</Table.RowHeaderCell>
-            <Table.Cell>{showTimes[0]}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.RowHeaderCell>{showLabel[1]}</Table.RowHeaderCell>
-            <Table.Cell>{showTimes[1]}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.RowHeaderCell>{showLabel[2]}</Table.RowHeaderCell>
-            <Table.Cell>{showTimes[2]}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.RowHeaderCell>{showLabel[3]}</Table.RowHeaderCell>
-            <Table.Cell>{showTimes[3]}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.RowHeaderCell>{showLabel[4]}</Table.RowHeaderCell>
-            <Table.Cell>{showTimes[4]}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.RowHeaderCell>{showLabel[5]}</Table.RowHeaderCell>
-            <Table.Cell>{showTimes[5]}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.RowHeaderCell>{showLabel[6]}</Table.RowHeaderCell>
-            <Table.Cell>{showTimes[6]}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.RowHeaderCell>{showLabel[7]}</Table.RowHeaderCell>
-            <Table.Cell>{showTimes[7]}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.RowHeaderCell>{showLabel[8]}</Table.RowHeaderCell>
-            <Table.Cell>{showTimes[8]}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.RowHeaderCell>{showLabel[9]}</Table.RowHeaderCell>
-            <Table.Cell>{showTimes[9]}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.RowHeaderCell>{showLabel[10]}</Table.RowHeaderCell>
-            <Table.Cell>{showTimes[10]}</Table.Cell>
-          </Table.Row>
-        </Table.Body>
+        <Table.Body>{showData}</Table.Body>
       </Table.Root>
     </div>
   );
