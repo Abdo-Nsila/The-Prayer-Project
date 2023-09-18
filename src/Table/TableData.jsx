@@ -45,7 +45,7 @@ export default function TableData({ country, city }) {
 
   return (
     <div className="box">
-      <h1 style={{ margin: "auto 10px " }}>Prayer Table</h1>
+      <h1 style={{ margin: "10px" }}>Prayer Table</h1>
       <Table.Root variant="surface">
         <Table.Header>
           <Table.Row>

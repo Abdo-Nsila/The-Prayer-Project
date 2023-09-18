@@ -4,6 +4,8 @@ import Table from "../Table/TableData";
 import { CountrySelect, StateSelect } from "react-country-state-city";
 import "react-country-state-city/dist/react-country-state-city.css";
 
+import './Form.css'
+
 export default function App() {
   const [countryid, setCountryid] = useState(0);
   const [countryName, setCountryName] = useState("");

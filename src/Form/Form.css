@@ -1,0 +1,38 @@
+:root{
+    --w:70%;
+}
+
+.radix-themes,form{
+    /* background-color: orange; */
+    height: 20%;
+    width: 100%;
+}
+form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.stdropdown-container,h6{
+    margin: auto;
+    width: var(--w);
+}
+.stdropdown-menu{
+    width: 100%;
+    background-color: rgb(40, 38, 38);
+  }
+  .stdropdown-item{
+    margin: 0 5px;
+    background-color: rgb(40, 38, 38);
+    color: aliceblue;
+  }
+  .stdropdown-item:hover{
+    border-radius: 5px;
+    background-color: #fff;
+    color: rgb(40, 38, 38);
+  }
+  
+  svg{
+    fill: #fff;
+  }
+  
