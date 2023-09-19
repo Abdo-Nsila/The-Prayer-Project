@@ -3,14 +3,14 @@ import Table from "../Table/TableData";
 
 import { CountrySelect, StateSelect } from "react-country-state-city";
 import "react-country-state-city/dist/react-country-state-city.css";
+import ReactLoading from "react-loading";
 
-import './Form.css'
+import "./Form.css";
 
 export default function App() {
   const [countryid, setCountryid] = useState(0);
   const [countryName, setCountryName] = useState("");
   const [cityName, setcityName] = useState("");
-
 
   return (
     <>
@@ -33,9 +33,16 @@ export default function App() {
         />
       </form>
 
-        {(countryName && cityName) && (
-          <Table country={countryName} city={cityName} />
-        )}
+      {countryName && cityName ? (
+        <Table country={countryName} city={cityName} />
+      ) : (
+        <div className="box">
+          <ReactLoading type="spinningBubbles" color="#fff" />
+        </div>
+      )}
     </>
   );
 }
+
+// "predeploy": "npm run build",
+// "deploy": "gh-pages -d build",
