@@ -1,14 +1,16 @@
 {
-  "homepage":"http://Abdo-Nsila.github.io/The-Prayer-Project",
+  "homepage": "https://Abdo-Nsila.github.io/The-Prayer-Project",
   "name": "app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "build": "vite build",
+    "preview": "vite preview --port 8080",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@radix-ui/themes": "^1.1.2",
