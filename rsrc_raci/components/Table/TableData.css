@@ -1,0 +1,24 @@
+:root{
+    --w:70%;
+}
+
+.box{
+    /* background-color: crimson; */
+    height: 75vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rt-TableRoot{
+    margin-top: 50px;
+    width: var(--w);
+    scale: 1.1;
+}
+
+.rt-TableCell{
+    font-weight: 800;
+}
+
