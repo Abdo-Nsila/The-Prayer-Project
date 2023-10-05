@@ -11,5 +11,3 @@ created by [`Abdo-Nsila`](https://github.com/Abdo-Nsila)
 *``Optimize performence``
 
 *``Clean Code``
-
-*
