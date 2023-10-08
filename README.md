@@ -8,6 +8,4 @@ created by [`Abdo-Nsila`](https://github.com/Abdo-Nsila)
 
 *``Add image for every time``
 
-*``Optimize performence``
-
-*``Clean Code``
+*``afin akha zobair
