@@ -15,7 +15,7 @@ export default function App() {
   return (
     <>
       <Layer />
-      <div className="w-full container mx-auto">
+      <div className="w-full h-screen container mx-auto flex flex-col justify-center items-center">
         <form className="w-full flex justify-center items-center">
           <div className="w-[500px]">
             <div className="flex flex-col py-5 gap-2">
@@ -45,7 +45,7 @@ export default function App() {
         {countryName && cityName ? (
           <Table country={countryName} city={cityName} />
         ) : (
-          <div className="box">
+          <div className="h-full w-full flex justify-center items-center">
             <ReactLoading type="spinningBubbles" color="#fff" />
           </div>
         )}
