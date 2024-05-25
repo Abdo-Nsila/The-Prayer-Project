@@ -1,6 +1,6 @@
 const Layer = () => {
   return (
-  <div className='absolute w-full h-full bg-black bg-opacity-35 -z-10' />
+  <div className='absolute w-full h-screen bg-black bg-opacity-35 -z-10' />
   )
 }
 
