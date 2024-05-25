@@ -4,7 +4,6 @@ import Table from "../Table/TableData";
 // component
 import { CountrySelect, StateSelect } from "react-country-state-city";
 import "react-country-state-city/dist/react-country-state-city.css";
-import ReactLoading from "react-loading";
 import Layer from "../Layer";
 
 export default function App() {
@@ -15,8 +14,8 @@ export default function App() {
   return (
     <>
       <Layer />
-      <div className="w-full h-screen container mx-auto flex flex-col justify-center items-center">
-        <form className="w-full flex justify-center items-center">
+      <div className="w-full h-screen container mx-auto py-6 flex flex-col justify-between items-center">
+        <form className="w-full flex justify-center items-center self-start">
           <div className="w-[500px]">
             <div className="flex flex-col py-5 gap-2">
               <h6 className="text-3xl text-neutral-200">Country</h6>
@@ -44,11 +43,7 @@ export default function App() {
 
         {countryName && cityName ? (
           <Table country={countryName} city={cityName} />
-        ) : (
-          <div className="h-full w-full flex justify-center items-center">
-            <ReactLoading type="spinningBubbles" color="#fff" />
-          </div>
-        )}
+        ) : null}
       </div>
     </>
   );
