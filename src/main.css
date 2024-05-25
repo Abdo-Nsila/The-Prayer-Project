@@ -1,17 +1,107 @@
-*{
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
     margin: 0;
     padding: 0;
-}
+  }
 
-#root{
-    /* background-color: blueviolet; */
+  body {
+    @apply !text-[#eee] !bg-neutral-900;
+  }
+
+  #root {
     height: 100vh;
-    width: 100vw;
-    background-image: url('./assets/bg-md.jpg');
+    background-image: url("./assets/bg-md.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    /* filter: blur(1px); */
+  }
 }
 
+/* start fomrs */
 
+.stdropdown-container {
+  border: none !important;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0px !important;
+}
+
+.stdropdown-input {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(3px) !important;
+}
+
+.stdropdown-input input {
+  border-radius: 6px !important;
+  background: transparent !important;
+  border: none !important;
+  color: #eee !important;
+}
+
+.stdropdown-input input:focus {
+  outline: 0 !important;
+}
+
+.stdropdown-input input:placeholder {
+  color: black;
+}
+
+.stdropdown-menu {
+  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(3px) !important;
+  border: none !important;
+  border-radius: 0px !important;
+  transform: translateY(0) !important;
+}
+
+.stdropdown-menu::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0) !important;
+}
+
+.stdropdown-menu::-webkit-scrollbar-thumb {
+  background: rgba(60, 60, 60) !important;
+}
+
+.stdropdown-item {
+  color: #eee;
+}
+
+.stdropdown-item:hover {
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(3px) !important;
+  color: #eee !important;
+}
+
+svg {
+  fill: #fff;
+}
+
+/* End Forms */
+/* Start tabels */
+table,
+th,
+td {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.rt-TableRoot {
+  width: 70%;
+  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(3px) !important;
+}
+
+.rt-TableCell {
+  color: #bbb;
+}
+
+.rt-TableColumnHeaderCell {
+  color: #eee;
+}

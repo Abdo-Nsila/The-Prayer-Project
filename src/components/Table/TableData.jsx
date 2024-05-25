@@ -3,21 +3,25 @@ import PropTypes from "prop-types";
 import { Table } from "@radix-ui/themes";
 import ReactLoading from "react-loading";
 
-import "./TableData.css";
-
 export default function TableData({ country, city }) {
   const [timings, setTimings] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const api = () => {
+      setLoading(true);
       fetch(
-        `http://api.aladhan.com/v1/timingsByCity?city=${city}&country=${country}&method=8`
+        `http://api.aladhan.com/v1/timingsByCity?city=${city}&country=${country}&method=8`,
       )
         .then((response) => response.json())
         .then((result) => {
           setTimings(result.data.timings);
+          setLoading(false);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          console.log(error);
+          setLoading(false);
+        });
     };
     api();
   }, [country, city]);
@@ -33,19 +37,13 @@ export default function TableData({ country, city }) {
     );
   });
 
-
-
-  if (!timings || Object.keys(timings).length === 0) {
-    return (
-      <div className="box">
-        <ReactLoading type="spinningBubbles" color="#fff" />
-      </div>
-    )
+  if (loading) {
+    return <Loading />;
   }
 
   return (
-    <div className="box">
-      <h1 style={{ margin: "10px" }}>Prayer Table</h1>
+    <div className="box w-full flex flex-col justify-center items-center gap-3">
+      <h1 className="text-3xl text-neutral-200">Prayer Table</h1>
       <Table.Root variant="surface">
         <Table.Header>
           <Table.Row>
@@ -59,6 +57,14 @@ export default function TableData({ country, city }) {
     </div>
   );
 }
+
+const Loading = () => {
+  return (
+    <div className="h-full w-full flex justify-center items-center">
+      <ReactLoading type="spinningBubbles" color="#fff" />
+    </div>
+  );
+};
 
 TableData.propTypes = {
   country: PropTypes.string.isRequired,
