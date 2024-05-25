@@ -2,20 +2,79 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-#root{
-    /* background-color: blueviolet; */
-    height: 100vh;
-    width: 100vw;
-    background-image: url('./assets/bg-md.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    /* filter: blur(1px); */
+body {
+  color: #eee;
 }
 
+#root {
+  /* background-color: blueviolet; */
+  height: 100vh;
+  background-image: url("./assets/bg-md.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* filter: blur(1px); */
+}
 
+/* start fomrs */
+
+.stdropdown-container {
+  border: none !important;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.stdropdown-input {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(3px) !important;
+}
+
+.stdropdown-input input {
+  border-radius: 6px !important;
+  background: transparent !important;
+  border: none !important;
+  color: #eee !important;
+}
+.stdropdown-input input:focus {
+  outline: 0 !important;
+}
+
+.stdropdown-input input:placeholder {
+  color: black;
+}
+
+.stdropdown-menu {
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(3px) !important;
+  border: none !important;
+}
+.stdropdown-menu::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0) !important;
+}
+.stdropdown-menu::-webkit-scrollbar-thumb {
+  background: rgba(60, 60, 60) !important;
+}
+
+.stdropdown-item {
+  color: #eee;
+}
+
+.stdropdown-item:hover {
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(3px) !important;
+  color: #eee !important;
+}
+
+svg {
+  fill: #fff;
+}
+
+/* End Forms */
