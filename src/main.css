@@ -2,23 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-}
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+  }
 
-body {
-  color: #eee;
-}
+  body {
+    @apply !text-[#eee] !bg-neutral-900;
+  }
 
-#root {
-  /* background-color: blueviolet; */
-  height: 100vh;
-  background-image: url("./assets/bg-md.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  /* filter: blur(1px); */
+  #root {
+    height: 100vh;
+    background-image: url("./assets/bg-md.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 /* start fomrs */
@@ -26,6 +26,7 @@ body {
 .stdropdown-container {
   border: none !important;
   background: rgba(0, 0, 0, 0.5);
+  border-radius: 0px !important;
 }
 
 .stdropdown-input {
@@ -42,6 +43,7 @@ body {
   border: none !important;
   color: #eee !important;
 }
+
 .stdropdown-input input:focus {
   outline: 0 !important;
 }
@@ -51,14 +53,18 @@ body {
 }
 
 .stdropdown-menu {
-  background: rgba(0, 0, 0, 0.8) !important;
+  background: rgba(0, 0, 0, 0.5) !important;
   backdrop-filter: blur(10px) !important;
   -webkit-backdrop-filter: blur(3px) !important;
   border: none !important;
+  border-radius: 0px !important;
+  transform: translateY(0) !important;
 }
+
 .stdropdown-menu::-webkit-scrollbar-track {
   background: rgba(0, 0, 0) !important;
 }
+
 .stdropdown-menu::-webkit-scrollbar-thumb {
   background: rgba(60, 60, 60) !important;
 }

@@ -12,7 +12,7 @@ export default function App() {
   const [cityName, setcityName] = useState("");
 
   return (
-    <div className="w-full container mx-auto">
+    <div className="w-full container mx-auto flex flex-col justify-center items-center">
       <form className="w-full flex justify-center items-center">
         <div className="w-[500px]">
           <div className="flex flex-col py-5 gap-2">
