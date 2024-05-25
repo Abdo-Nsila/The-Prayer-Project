@@ -3,15 +3,13 @@ import PropTypes from "prop-types";
 import { Table } from "@radix-ui/themes";
 import ReactLoading from "react-loading";
 
-import "./TableData.css";
-
 export default function TableData({ country, city }) {
   const [timings, setTimings] = useState([]);
 
   useEffect(() => {
     const api = () => {
       fetch(
-        `http://api.aladhan.com/v1/timingsByCity?city=${city}&country=${country}&method=8`
+        `http://api.aladhan.com/v1/timingsByCity?city=${city}&country=${country}&method=8`,
       )
         .then((response) => response.json())
         .then((result) => {
@@ -33,18 +31,16 @@ export default function TableData({ country, city }) {
     );
   });
 
-
-
   if (!timings || Object.keys(timings).length === 0) {
     return (
       <div className="box">
-        <ReactLoading type="spinningBubbles" color="#fff" />
+        <ReactLoading type="spinningBubbles" color="#eee" />
       </div>
-    )
+    );
   }
 
   return (
-    <div className="box w-full flex flex-col justify-center items-center">
+    <div className="box w-full flex flex-col justify-center items-center gap-3">
       <h1 className="text-3xl text-neutral-200">Prayer Table</h1>
       <Table.Root variant="surface">
         <Table.Header>

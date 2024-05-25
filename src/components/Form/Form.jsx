@@ -12,7 +12,7 @@ export default function App() {
   const [cityName, setcityName] = useState("");
 
   return (
-    <div className="w-full container mx-auto flex flex-col justify-center items-center">
+    <div className="w-full h-screen container mx-auto py-8 flex flex-col justify-between items-center">
       <form className="w-full flex justify-center items-center">
         <div className="w-[500px]">
           <div className="flex flex-col py-5 gap-2">
@@ -42,8 +42,8 @@ export default function App() {
       {countryName && cityName ? (
         <Table country={countryName} city={cityName} />
       ) : (
-        <div className="box">
-          <ReactLoading type="spinningBubbles" color="#fff" />
+        <div className="flex justify-center items-center w-full h-full">
+          <ReactLoading type="spinningBubbles" color="#eee" />
         </div>
       )}
     </div>

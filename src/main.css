@@ -84,3 +84,24 @@ svg {
 }
 
 /* End Forms */
+/* Start tabels */
+table,
+th,
+td {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.rt-TableRoot {
+  width: 70%;
+  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(3px) !important;
+}
+
+.rt-TableCell {
+  color: #bbb;
+}
+
+.rt-TableColumnHeaderCell {
+  color: #eee;
+}
