@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import { Table } from "@radix-ui/themes";
 import ReactLoading from "react-loading";
 
+// The api is stored in the .env file
+const apiUrl = import.meta.env.VITE_API_URL;
+
 export default function TableData({ country, city }) {
   const [timings, setTimings] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -10,9 +13,7 @@ export default function TableData({ country, city }) {
   useEffect(() => {
     const api = () => {
       setLoading(true);
-      fetch(
-        `http://api.aladhan.com/v1/timingsByCity?city=${city}&country=${country}&method=8`,
-      )
+      fetch(`${apiUrl}&city=${city}&country=${country}`)
         .then((response) => response.json())
         .then((result) => {
           setTimings(result.data.timings);
