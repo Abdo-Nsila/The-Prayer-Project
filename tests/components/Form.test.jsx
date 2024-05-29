@@ -1,4 +1,3 @@
-import userEvent from "@testing-library/user-event";
 import { render, fireEvent } from "@testing-library/react";
 import Form from "../../src/components/Form/Form";
 
