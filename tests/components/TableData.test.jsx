@@ -1,10 +1,11 @@
-import { render  } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import TableData from "../../src/components/Table/TableData";
 
 describe("TableData", () => {
   it("renders TableData component with props", async () => {
-    const { container } = render(<TableData country="Morocco" city="Marrakech" />);
+    render(<TableData country="Morocco" city="Marrakech" />);
+    const textElement = await screen.findByText(/Prayer Table/i);
 
-    expect(container).not.toBeEmptyDOMElement()
+    expect(textElement).toBeInTheDocument();
   });
 });

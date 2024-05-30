@@ -1,5 +1,6 @@
 import { render, fireEvent } from "@testing-library/react";
 import Form from "../../src/components/Form/Form";
+import userEvent from "@testing-library/user-event";
 
 describe("Form", () => {
   it("Should renders CountrySelect and StateSelect components", () => {
@@ -19,14 +20,14 @@ describe("Form", () => {
 
   it("updates state on StateSelect change", () => {
     const { getByPlaceholderText } = render(<Form />);
-    const countrySelect = getByPlaceholderText(/City/i);
+    const stateSelect = getByPlaceholderText(/City/i);
 
-    fireEvent.change(countrySelect, { target: { value: "1" } });
+    fireEvent.change(stateSelect, { target: { value: "1" } });
 
-    expect(countrySelect.value).toBe("1");
+    expect(stateSelect.value).toBe("1");
   });
 
-  it("should not render table and countrySelect and stateSelect are empty", () => {
+  it("should not render the table initially", () => {
     const { queryByText, getByPlaceholderText } = render(<Form />);
 
     expect(queryByText(/Prayer Table/i)).toBeNull();

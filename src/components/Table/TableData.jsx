@@ -4,16 +4,16 @@ import { Table } from "@radix-ui/themes";
 import ReactLoading from "react-loading";
 
 // The api is stored in the .env file
-const apiUrl = import.meta.env.VITE_API_URL;
+const apiUrl = (apiUrl = import.meta.env.VITE_API_URL);
 
 export default function TableData({ country, city }) {
   const [timings, setTimings] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const api = () => {
+    const api = async () => {
       setLoading(true);
-      fetch(`${apiUrl}&city=${city}&country=${country}`)
+      await fetch(`${apiUrl}&city=${city}&country=${country}`)
         .then((response) => response.json())
         .then((result) => {
           setTimings(result.data.timings);
@@ -39,7 +39,12 @@ export default function TableData({ country, city }) {
   });
 
   if (loading) {
-    return <Loading />;
+    return (
+      <div className="h-full w-full flex flex-col gap-5 justify-center items-center">
+        <h1 className="text-3xl text-neutral-200">Prayer Table</h1>
+        <ReactLoading type="spinningBubbles" color="#fff" />
+      </div>
+    );
   }
 
   return (
@@ -58,14 +63,6 @@ export default function TableData({ country, city }) {
     </div>
   );
 }
-
-const Loading = () => {
-  return (
-    <div className="h-full w-full flex justify-center items-center">
-      <ReactLoading type="spinningBubbles" color="#fff" />
-    </div>
-  );
-};
 
 TableData.propTypes = {
   country: PropTypes.string.isRequired,
