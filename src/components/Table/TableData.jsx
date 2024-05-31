@@ -4,7 +4,7 @@ import { Table } from "@radix-ui/themes";
 import ReactLoading from "react-loading";
 
 // The api is stored in the .env file
-const apiUrl = (apiUrl = import.meta.env.VITE_API_URL);
+const apiUrl = import.meta.env.VITE_API_URL;
 
 export default function TableData({ country, city }) {
   const [timings, setTimings] = useState([]);
