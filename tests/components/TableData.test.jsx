@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import TableData from "../../src/components/Table/TableData";
 
 describe("TableData", () => {
@@ -6,6 +6,6 @@ describe("TableData", () => {
     render(<TableData country="Morocco" city="Marrakech" />);
     const textElement = await screen.findByText(/Prayer Table/i);
 
-    expect(textElement).toBeInTheDocument();
+    await waitFor(() => expect(textElement).toBeInTheDocument());
   });
 });
