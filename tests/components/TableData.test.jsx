@@ -3,7 +3,7 @@ import TableData from "../../src/components/Table/TableData";
 
 describe("TableData", () => {
   it("renders TableData component with props", async () => {
-    render(<TableData country="Morocco" city="Marrakech" />);
+    render(<TableData country="morocco" city="marrakech" />);
     const textElement = await screen.findByText(/Prayer Table/i);
 
     await waitFor(() => expect(textElement).toBeInTheDocument());
