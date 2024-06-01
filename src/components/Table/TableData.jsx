@@ -40,8 +40,10 @@ export default function TableData({ country, city }) {
 
   if (loading) {
     return (
-      <div className="h-full w-full flex flex-col gap-5 justify-center items-center">
-        <h1 className="text-3xl text-neutral-200">Prayer Table</h1>
+      <div
+        className="h-full w-full flex flex-col gap-5 justify-center items-center"
+        data-testid="loading"
+      >
         <ReactLoading type="spinningBubbles" color="#fff" />
       </div>
     );
