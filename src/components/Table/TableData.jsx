@@ -11,9 +11,9 @@ export default function TableData({ country, city }) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const api = () => {
+    const api = async () => {
       setLoading(true);
-      fetch(`${apiUrl}&city=${city}&country=${country}`)
+      await fetch(`${apiUrl}&city=${city}&country=${country}`)
         .then((response) => response.json())
         .then((result) => {
           setTimings(result.data.timings);
@@ -39,7 +39,14 @@ export default function TableData({ country, city }) {
   });
 
   if (loading) {
-    return <Loading />;
+    return (
+      <div
+        className="h-full w-full flex flex-col gap-5 justify-center items-center"
+        data-testid="loading"
+      >
+        <ReactLoading type="spinningBubbles" color="#fff" />
+      </div>
+    );
   }
 
   return (
@@ -58,14 +65,6 @@ export default function TableData({ country, city }) {
     </div>
   );
 }
-
-const Loading = () => {
-  return (
-    <div className="h-full w-full flex justify-center items-center">
-      <ReactLoading type="spinningBubbles" color="#fff" />
-    </div>
-  );
-};
 
 TableData.propTypes = {
   country: PropTypes.string.isRequired,

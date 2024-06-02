@@ -6,7 +6,7 @@ import { CountrySelect, StateSelect } from "react-country-state-city";
 import "react-country-state-city/dist/react-country-state-city.css";
 import Layer from "../Layer";
 
-export default function App() {
+export default function Form() {
   const [countryid, setCountryid] = useState(0);
   const [countryName, setCountryName] = useState("");
   const [cityName, setcityName] = useState("");
