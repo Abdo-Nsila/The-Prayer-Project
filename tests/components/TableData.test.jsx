@@ -28,7 +28,6 @@ describe("TableData Component", () => {
   it("displays table data after fetching", async () => {
     render(<TableData country="TestCountry" city="TestCity" />);
 
-    // Wait for the fetch call to complete and the component to re-render
     const fajrTime = await screen.findByText(/04:00 AM/i);
     expect(fajrTime).toBeInTheDocument();
 
@@ -48,7 +47,6 @@ describe("TableData Component", () => {
   it("displays the table headers correctly", async () => {
     render(<TableData country="TestCountry" city="TestCity" />);
 
-    // Wait for the fetch call to complete and the component to re-render
     await screen.findByText("04:00 AM");
 
     const prayerHeader = screen.getAllByText("Prayer")[0];
