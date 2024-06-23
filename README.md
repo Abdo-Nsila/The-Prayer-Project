@@ -10,8 +10,5 @@ created by [`Abdo-Nsila`](https://github.com/Abdo-Nsila)
 
 *``Clean Code``
 
-*``Optimize Performence``
-
-*``Working with multiple APIs``
 
 
