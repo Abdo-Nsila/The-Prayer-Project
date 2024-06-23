@@ -6,9 +6,6 @@ created by [`Abdo-Nsila`](https://github.com/Abdo-Nsila)
 
 ## Features :
 
-*``Add image for every time``
-
-*``Clean Code``
 
 
 
